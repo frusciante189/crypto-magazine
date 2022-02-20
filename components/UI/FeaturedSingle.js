@@ -9,7 +9,7 @@ const FeaturedSingle = () => {
           <p className="font-mono dark:text-darkTitle text-lightTitle">
             Metaverse
           </p>
-          <h3 className="font-inter dark:text-darkTitle text-lightTitle font-bold text-lg mt-1.5 leading-tight">
+          <h3 className="font-inter dark:text-darkTitle text-lightTitle font-bold text-lg mt-1.5 leading-tight hover:underline underline-offset-1">
             Here's the Gear You Need to Start Your Own Podcast
           </h3>
         </div>
