@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .navLink {
+    @apply text-[13px] dark:text-darkText text-lightText cursor-pointer hover:underline underline-offset-2 p-2;
+  }
+}
