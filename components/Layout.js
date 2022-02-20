@@ -30,7 +30,9 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider>
       <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
-      <main>{children}</main>
+      <main className="max-w-screen-2xl mx-auto lg:px-8 sm:px-6 px-4 antialiased">
+        {children}
+      </main>
       <Footer />
     </ThemeProvider>
   );

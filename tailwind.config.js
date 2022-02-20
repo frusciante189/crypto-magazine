@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         barlow: ["Barlow", "sans-serif"],
-        rubik: ["Rubik", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
         mono: ["Share Tech Mono", "monospace"],
         spaceMono: ["Space Mono", "monospace"],
       },

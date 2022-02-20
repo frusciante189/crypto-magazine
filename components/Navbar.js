@@ -8,7 +8,7 @@ import Overlay from "./UI/Overlay";
 const Navbar = ({ isOpen, setIsOpen }) => {
   return (
     <>
-      <header className="py-4 sticky top-0 left-0 font-mono dark:bg-darkBg bg-white transition-all transform duration-500 ease-in-out border-b dark:border-zinc-600">
+      <header className="py-4 sticky top-0 left-0 font-mono dark:bg-darkBg bg-white transition-all transform duration-500 ease-in-out border-b dark:border-zinc-600 z-50">
         <div className="lg:px-8 sm:px-6 px-4">
           <div className="flex items-center justify-between">
             <div className="flex lg:space-x-8 items-center space-x-4">
