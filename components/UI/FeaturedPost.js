@@ -23,12 +23,9 @@ const FeaturedPost = () => {
         </div>
         <div className="col-span-4 flex flex-col justify-between">
           <div>
-            <h3 className="xl:text-5xl lg:text-4xl sm:text-3xl text-2xl font-bold font-inter uppercase lg:tracking-tight hover:underline decoration-6 cursor-pointer dark:text-darkTitle text-lightTitle">
+            <h3 className="xl:text-5xl lg:text-4xl sm:text-3xl text-2xl font-black font-inter uppercase lg:tracking-tight hover:underline decoration-6 cursor-pointer dark:text-darkTitle text-lightTitle">
               Jacques Vallee still doesn't know what ufos are
             </h3>
-            <p className="text-sm font-mono lg:mt-4 mt-2  dark:text-darkTitle text-lightTitle">
-              Chantel Tattoli
-            </p>
           </div>
           <div className="mt-5">
             <p className="dark:text-darkText text-lightText font-barlow xl:text-lg md:text-base text-sm">

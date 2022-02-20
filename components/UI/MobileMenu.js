@@ -1,8 +1,8 @@
 import { XIcon } from "@heroicons/react/outline";
 import React, { useRef, useEffect } from "react";
 import { FaFacebook, FaInstagram, FaTelegram, FaTwitter } from "react-icons/fa";
-import useWindowSize from "../hooks/useWindowSize";
-import DarkMode from "./UI/DarkMode";
+import useWindowSize from "../../hooks/useWindowSize";
+import DarkMode from "./DarkMode";
 
 const MobileMenu = ({ isOpen, setIsOpen }) => {
   const ref = useRef(null);
@@ -24,7 +24,7 @@ const MobileMenu = ({ isOpen, setIsOpen }) => {
   return (
     <div
       ref={ref}
-      className={`fixed top-0 right-0 sm:w-80 w-full h-full bg-white dark:bg-darkBg z-20 
+      className={`fixed top-0 right-0 sm:w-80 w-full h-full bg-white dark:bg-darkBg z-50 
   transition-all duration-500 ease-in-out transform font-mono
   ${isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}
   `}
