@@ -1,5 +1,5 @@
 import Head from "next/head";
-import FeaturedPost from "../components/FeaturedPost";
+import FeaturedSection from "../components/FeaturedSection";
 import Hero from "../components/Hero";
 import Trending from "../components/Trending";
 
@@ -14,6 +14,7 @@ export default function Home() {
         <div className="max-w-screen-2xl mx-auto lg:px-8 sm:px-6 px-4 ">
           <Hero />
           <Trending />
+          <FeaturedSection />
         </div>
       </div>
     </>
