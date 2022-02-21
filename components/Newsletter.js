@@ -3,8 +3,8 @@ import React from "react";
 
 const Newsletter = () => {
   return (
-    <div className="md:min-h-[600px] md:py-4 py-12 flex items-center justify-center relative px-4 md:px-8">
-      <div className="dark:bg-white bg-darkBg relative z-20 px-8 py-14">
+    <div className="md:min-h-[600px] md:py-4 py-12 flex items-center justify-center px-4 md:px-8 relative">
+      <div className="dark:bg-white bg-darkBg relative z-20 px-8 py-14 ">
         <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-10 gap-8 items-center">
           <div className="">
             <p className="lg:text-4xl md:text-3xl font-inter font-bold uppercase max-w-md dark:text-lightTitle text-darkTitle">
@@ -49,13 +49,13 @@ const Newsletter = () => {
           </div>
         </div>
       </div>
-      <div className="absolute inset-0 z-10">
-        <Image
-          src="https://images.unsplash.com/photo-1616400619175-5beda3a17896?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto"
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
+      <Image
+        src="https://images.unsplash.com/photo-1616400619175-5beda3a17896?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto"
+        layout="fill"
+        objectFit="cover"
+        priority
+        className="absolute inset-0 z-10"
+      />
     </div>
   );
 };

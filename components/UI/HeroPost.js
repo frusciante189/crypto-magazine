@@ -9,6 +9,7 @@ const HeroPost = () => {
           src="https://images.unsplash.com/photo-1640622842924-fb0017b9d786?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"
           layout="fill"
           objectFit="cover"
+          priority
         />
       </div>
       <div className="mt-4">
