@@ -22,7 +22,7 @@ const Newsletter = () => {
               <input
                 type="text"
                 placeholder="Your Email"
-                className="border md:py-3 py-2 md:pl-3 pl-2 w-full bg-transparent peer placeholder-transparent focus:outline-none relative z-20 caret-darkText dark:caret-lightText"
+                className="border md:py-3 text-darkText dark:text-lightText py-2 md:pl-3 pl-2 w-full bg-transparent peer placeholder-transparent focus:outline-none relative z-20 caret-darkText dark:caret-lightText"
               />
               <label
                 htmlFor="email"

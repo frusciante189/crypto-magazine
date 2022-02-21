@@ -16,6 +16,9 @@ const FeaturedVideo = () => {
           <PlayIcon className="w-8 h-8 text-lightTitle dark:text-darkTitle" />
         </div>
       </div>
+      <h2 className="font-inter font-black text-xl mt-5 dark:text-darkTitle text-lightTitle">
+        Rhett & Link Test Tiny Gadgets
+      </h2>
     </div>
   );
 };
