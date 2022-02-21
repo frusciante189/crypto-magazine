@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Categories from "../components/Categories";
 import FeaturedSection from "../components/FeaturedSection";
+import FeaturedVideos from "../components/FeaturedVideos";
 import Hero from "../components/Hero";
 import Newsletter from "../components/Newsletter";
 import Trending from "../components/Trending";
@@ -19,8 +20,9 @@ export default function Home() {
           <FeaturedSection />
           <Categories />
           <FeaturedSection />
-          <Newsletter />
         </div>
+        <Newsletter />
+        <FeaturedVideos />
       </div>
     </>
   );

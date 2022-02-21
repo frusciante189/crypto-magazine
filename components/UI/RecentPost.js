@@ -5,10 +5,10 @@ const RecentPost = () => {
   return (
     <div className="flex xl:space-x-6 lg:space-x-2 items-center py-4 first:pt-0 last:pb-0">
       <div className="flex-grow">
-        <h3 className="font-inter xl:text-lg text-base dark:text-darkText text-lightText font-bold lg:pr-0 pr-12">
+        <h3 className="font-inter xl:text-lg text-base dark:text-darkText text-lightText font-bold lg:pr-0 pr-12 hover:underline decoration-2 underline-offset-1">
           Millions of WordPress Sites Got a Forced Update
         </h3>
-        <p className="xl:mt-2 mt-1 dark:text-darkText text-lightText font-mono xl:tracking-tight lg:tracking-normal">
+        <p className="xl:mt-1.5 mt-1 dark:text-darkText text-lightText font-mono xl:tracking-tight lg:tracking-normal">
           Smart Contracts
         </p>
       </div>
