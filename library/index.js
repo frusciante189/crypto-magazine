@@ -133,7 +133,7 @@ export const getTrendingPosts = async () => {
     query MyQuery {
       postsConnection(
         orderBy: createdAt_DESC
-        first: 3
+        first: 4
         where: { trending: true }
       ) {
         edges {
