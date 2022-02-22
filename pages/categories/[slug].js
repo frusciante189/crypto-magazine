@@ -7,7 +7,7 @@ import SubCategory from "../../components/Category/SubCategory";
 import Navbar from "../../components/Navbar";
 import { getCategories } from "../../library";
 
-const index = ({ categories }) => {
+const Index = ({ categories }) => {
   const router = useRouter();
 
   const capitalize = (string) =>
@@ -40,7 +40,7 @@ const index = ({ categories }) => {
   );
 };
 
-export default index;
+export default Index;
 
 export async function getStaticProps() {
   const categories = (await getCategories()) || [];
