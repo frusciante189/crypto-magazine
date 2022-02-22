@@ -1,25 +1,10 @@
 import { XIcon } from "@heroicons/react/outline";
-import React, { useRef, useEffect } from "react";
 import { FaFacebook, FaInstagram, FaTelegram, FaTwitter } from "react-icons/fa";
-import useWindowSize from "../../hooks/useWindowSize";
+import { useProvider } from "../../context/context";
 import DarkMode from "./DarkMode";
 
-const MobileMenu = ({ isOpen, setIsOpen }) => {
-  const ref = useRef(null);
-  const size = useWindowSize();
-
-  useEffect(() => {
-    const handleOutsideClick = (e) => {
-      if (size.width < 1024) {
-        if (!ref.current.contains(e.target)) {
-          if (!isOpen) return;
-          setIsOpen(false);
-        }
-      }
-    };
-    window.addEventListener("click", handleOutsideClick);
-    return () => window.removeEventListener("click", handleOutsideClick);
-  }, [ref, isOpen]);
+const MobileMenu = () => {
+  const { isOpen, setIsOpen, ref } = useProvider();
 
   return (
     <div

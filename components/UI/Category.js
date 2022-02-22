@@ -5,7 +5,9 @@ const Category = () => {
   return (
     <div>
       <div className="dark:bg-white bg-black dark:text-lightTitle text-darkTitle max-w-max px-3 py-2 sm:py-1.5">
-        <p className="font-spaceMono uppercase text-sm font-bold">Business</p>
+        <p className="font-spaceMono uppercase text-sm font-bold tracking-wider">
+          Business
+        </p>
       </div>
       <div className="aspect-video relative">
         <Image

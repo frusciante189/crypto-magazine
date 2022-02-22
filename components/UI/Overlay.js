@@ -1,6 +1,9 @@
 import React from "react";
+import { useProvider } from "../../context/context";
 
-const Overlay = ({ isOpen }) => {
+const Overlay = () => {
+  const { isOpen } = useProvider();
+
   return (
     <div
       className={

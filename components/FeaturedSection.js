@@ -7,7 +7,7 @@ const FeaturedSection = () => {
     <div className="py-4">
       <div className="md:border-t-2 border-black dark:border-white">
         <div className="dark:bg-white bg-black dark:text-lightTitle text-darkTitle md:max-w-max max-w-full px-3 py-2 sm:py-1.5">
-          <p className="font-spaceMono uppercase text-sm font-bold">
+          <p className="font-spaceMono uppercase text-sm font-bold tracking-wider">
             Blockchain Development
           </p>
         </div>

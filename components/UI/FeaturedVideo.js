@@ -13,7 +13,7 @@ const FeaturedVideo = () => {
           className="group-hover:opacity-90 transition-colors duration-300 ease-in-out"
         />
         <div className="absolute bottom-3 left-3 p-4 bg-neutral-100 dark:bg-darkBg rounded-full group-hover:bg-opacity-90 transition-colors duration-300 ease-in-out">
-          <PlayIcon className="w-8 h-8 text-lightTitle dark:text-darkTitle" />
+          <PlayIcon className="lg:w-8 md:w-6 md:h-6 lg:h-8 w-8 h-8 text-lightTitle dark:text-darkTitle" />
         </div>
       </div>
       <h2 className="font-inter font-black text-xl mt-5 dark:text-darkTitle text-lightTitle">

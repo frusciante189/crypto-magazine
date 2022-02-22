@@ -1,9 +1,9 @@
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import React from "react";
-import { useTheme } from "../../context/theme";
+import { useProvider } from "../../context/context";
 
 const DarkMode = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useProvider();
 
   const themeHandler = () => {
     setTheme(theme === "light" ? "dark" : "light");

@@ -4,8 +4,10 @@ import DarkMode from "./UI/DarkMode";
 import Link from "next/link";
 import MobileMenu from "./UI/MobileMenu";
 import Overlay from "./UI/Overlay";
+import { useProvider } from "../context/context";
 
-const Navbar = ({ isOpen, setIsOpen }) => {
+const Navbar = ({ categories }) => {
+  const { isOpen, setIsOpen } = useProvider();
   return (
     <>
       <header className="py-4 sticky top-0 left-0 font-mono dark:bg-darkBg bg-white transition-all transform duration-500 ease-in-out border-b dark:border-zinc-600 z-40">
@@ -20,12 +22,13 @@ const Navbar = ({ isOpen, setIsOpen }) => {
                 </Link>
               </div>
               <nav className="md:flex hidden items-center lg:space-x-2 space-x-1">
-                <span className="navLink">Backchannel</span>
-                <span className="navLink">Business</span>
-                <span className="navLink">Culture</span>
-                <span className="navLink">Gear</span>
-                <span className="navLink">Ideas</span>
-                <span className="navLink">Science</span>
+                {categories?.map((category, index) => {
+                  return (
+                    <Link href={`/categories/${category.slug}`} key={index}>
+                      <a className="navLink">{category.name}</a>
+                    </Link>
+                  );
+                })}
               </nav>
             </div>
             <div className="flex items-center space-x-3">

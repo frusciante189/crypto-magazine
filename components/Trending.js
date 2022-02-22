@@ -7,12 +7,12 @@ const Trending = () => {
       <div className="md:border-t-2 border-black dark:border-white">
         <div className="flex space-x-6 items-center">
           <div className="dark:bg-white bg-black dark:text-lightTitle text-darkTitle md:max-w-max max-w-full px-3 py-2 sm:py-1.5 flex-1">
-            <p className="font-spaceMono uppercase text-sm font-bold">
-              Trending Stories
+            <p className="font-spaceMono uppercase text-sm font-bold tracking-wider select-none pointer-events-none">
+              Trendler
             </p>
           </div>
-          <p className="dark:text-darkTitle text-lightTitle font-spaceMono font-bold uppercase text-sm md:block hidden">
-            Top stories from last month
+          <p className="dark:text-darkTitle text-lightTitle font-spaceMono font-bold uppercase text-sm md:block hidden select-none pointer-events-none">
+            Geçen Ayın en beğenİlenlerİ
           </p>
         </div>
       </div>
