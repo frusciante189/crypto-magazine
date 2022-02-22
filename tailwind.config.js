@@ -19,9 +19,6 @@ module.exports = {
         darkTitle: "#ecedee",
         darkText: "#ededef",
       },
-      gridTemplateRows: {
-        12: "repeat(12, minmax(0, 1fr))",
-      },
     },
   },
   plugins: [],

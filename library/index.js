@@ -44,6 +44,35 @@ export const getFirstFeaturedPost = async () => {
   return result.postsConnection.edges[0].node;
 };
 
+export const getOtherFeaturedPost = async () => {
+  const query = gql`
+    query MyQuery {
+      postsConnection(
+        orderBy: createdAt_DESC
+        where: { featured: true }
+        skip: 1
+      ) {
+        edges {
+          node {
+            title
+            slug
+            featuredImage {
+              url
+            }
+            excerpt
+            categories {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result.postsConnection.edges;
+};
+
 export const getTodaysPicks = async () => {
   const query = gql`
     query MyQuery {
@@ -77,7 +106,7 @@ export const getLatestHeroPosts = async () => {
     query MyQuery {
       postsConnection(
         orderBy: createdAt_DESC
-        where: { featured: false, todaysPick: false }
+        where: { featured: false, todaysPick: false, trending: false }
       ) {
         edges {
           node {
@@ -90,6 +119,209 @@ export const getLatestHeroPosts = async () => {
               name
               slug
             }
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result.postsConnection.edges;
+};
+
+export const getTrendingPosts = async () => {
+  const query = gql`
+    query MyQuery {
+      postsConnection(
+        orderBy: createdAt_DESC
+        first: 3
+        where: { trending: true }
+      ) {
+        edges {
+          node {
+            title
+            slug
+            featuredImage {
+              url
+            }
+            excerpt
+            categories {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result.postsConnection.edges;
+};
+
+export const getHomeNFTPosts = async () => {
+  const query = gql`
+    query MyQuery {
+      postsConnection(
+        where: { categories_some: { name: "NFT" } }
+        orderBy: createdAt_DESC
+        first: 3
+      ) {
+        edges {
+          node {
+            title
+            slug
+            featuredImage {
+              url
+            }
+            categories {
+              name
+              slug
+            }
+            excerpt
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result.postsConnection.edges;
+};
+
+export const getHomeCulturePosts = async () => {
+  const query = gql`
+    query MyQuery {
+      postsConnection(
+        where: { categories_some: { name: "Culture" } }
+        orderBy: createdAt_DESC
+        first: 3
+      ) {
+        edges {
+          node {
+            title
+            slug
+            featuredImage {
+              url
+            }
+            categories {
+              name
+              slug
+            }
+            excerpt
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result.postsConnection.edges;
+};
+
+export const getHomeTechnologyPosts = async () => {
+  const query = gql`
+    query MyQuery {
+      postsConnection(
+        where: { categories_some: { name: "Technology" } }
+        orderBy: createdAt_DESC
+        first: 3
+      ) {
+        edges {
+          node {
+            title
+            slug
+            featuredImage {
+              url
+            }
+            categories {
+              name
+              slug
+            }
+            excerpt
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result.postsConnection.edges;
+};
+
+export const getHomeMetaversePosts = async () => {
+  const query = gql`
+    query MyQuery {
+      postsConnection(
+        where: { categories_some: { name: "Metaverse" } }
+        orderBy: createdAt_DESC
+        first: 3
+      ) {
+        edges {
+          node {
+            title
+            slug
+            featuredImage {
+              url
+            }
+            categories {
+              name
+              slug
+            }
+            excerpt
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result.postsConnection.edges;
+};
+
+export const getHomeBlockchainPosts = async () => {
+  const query = gql`
+    query MyQuery {
+      postsConnection(
+        where: { categories_some: { name: "Blockchain" } }
+        orderBy: createdAt_DESC
+        first: 3
+      ) {
+        edges {
+          node {
+            title
+            slug
+            featuredImage {
+              url
+            }
+            categories {
+              name
+              slug
+            }
+            excerpt
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result.postsConnection.edges;
+};
+
+export const getHomeDeFiPosts = async () => {
+  const query = gql`
+    query MyQuery {
+      postsConnection(
+        where: { categories_some: { name: "DeFi" } }
+        orderBy: createdAt_DESC
+        first: 3
+      ) {
+        edges {
+          node {
+            title
+            slug
+            featuredImage {
+              url
+            }
+            categories {
+              name
+              slug
+            }
+            excerpt
           }
         }
       }

@@ -9,15 +9,31 @@ import Trending from "../components/Trending";
 import {
   getCategories,
   getFirstFeaturedPost,
+  getHomeBlockchainPosts,
+  getHomeCulturePosts,
+  getHomeDeFiPosts,
+  getHomeMetaversePosts,
+  getHomeNFTPosts,
+  getHomeTechnologyPosts,
   getLatestHeroPosts,
+  getOtherFeaturedPost,
   getTodaysPicks,
+  getTrendingPosts,
 } from "../library";
 
 export default function Home({
   categories,
   firstFeaturedPost,
+  otherFeaturedPosts,
   todaysPick,
   latestHeroPosts,
+  trendingPosts,
+  nftPosts,
+  culturePosts,
+  technologyPosts,
+  metaversePosts,
+  blockchainPosts,
+  deFiPosts,
 }) {
   return (
     <>
@@ -33,10 +49,17 @@ export default function Home({
             todaysPick={todaysPick}
             latestHeroPosts={latestHeroPosts}
           />
-          <Trending />
-          <FeaturedSection />
-          <Categories />
-          <FeaturedSection />
+          <Trending trendingPosts={trendingPosts} />
+          <FeaturedSection otherFeaturedPost={otherFeaturedPosts[0].node} />
+          <Categories
+            nftPosts={nftPosts}
+            culturePosts={culturePosts}
+            technologyPosts={technologyPosts}
+            metaversePosts={metaversePosts}
+            blockchainPosts={blockchainPosts}
+            deFiPosts={deFiPosts}
+          />
+          <FeaturedSection otherFeaturedPost={otherFeaturedPosts[1].node} />
         </div>
         <Newsletter />
         <FeaturedVideos />
@@ -45,11 +68,19 @@ export default function Home({
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ params }) {
   const categories = (await getCategories()) || [];
   const firstFeaturedPost = (await getFirstFeaturedPost()) || [];
   const todaysPick = (await getTodaysPicks()) || [];
   const latestHeroPosts = (await getLatestHeroPosts()) || [];
+  const trendingPosts = (await getTrendingPosts()) || [];
+  const otherFeaturedPosts = (await getOtherFeaturedPost()) || [];
+  const nftPosts = (await getHomeNFTPosts()) || [];
+  const culturePosts = (await getHomeCulturePosts()) || [];
+  const technologyPosts = (await getHomeTechnologyPosts()) || [];
+  const metaversePosts = (await getHomeMetaversePosts()) || [];
+  const blockchainPosts = (await getHomeBlockchainPosts()) || [];
+  const deFiPosts = (await getHomeDeFiPosts()) || [];
 
   return {
     props: {
@@ -57,6 +88,14 @@ export async function getStaticProps() {
       firstFeaturedPost,
       todaysPick,
       latestHeroPosts,
+      trendingPosts,
+      otherFeaturedPosts,
+      nftPosts,
+      culturePosts,
+      technologyPosts,
+      metaversePosts,
+      blockchainPosts,
+      deFiPosts,
     },
   };
 }

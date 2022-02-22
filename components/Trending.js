@@ -1,7 +1,7 @@
 import React from "react";
 import TrendingPost from "./UI/TrendingPost";
 
-const Trending = () => {
+const Trending = ({ trendingPosts }) => {
   return (
     <div className="py-4">
       <div className="md:border-t-2 border-black dark:border-white">
@@ -17,10 +17,9 @@ const Trending = () => {
         </div>
       </div>
       <div className="grid md:grid-cols-4 grid-cols-1 lg:gap-x-10 gap-x-6 mt-4 divide-y md:divide-y-0">
-        <TrendingPost />
-        <TrendingPost />
-        <TrendingPost />
-        <TrendingPost />
+        {trendingPosts.map((trending, index) => {
+          return <TrendingPost trending={trending.node} key={index} />;
+        })}
       </div>
     </div>
   );
