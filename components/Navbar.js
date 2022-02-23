@@ -24,7 +24,14 @@ const Navbar = ({ categories }) => {
               <nav className="md:flex hidden items-center lg:space-x-2 space-x-1">
                 {categories?.map((category, index) => {
                   return (
-                    <Link href={`/categories/${category.slug}`} key={index}>
+                    <Link
+                      href={`${
+                        category.name === "Haberler"
+                          ? "/posts"
+                          : `/categories/${category.slug}`
+                      }`}
+                      key={index}
+                    >
                       <a className="navLink">{category.name}</a>
                     </Link>
                   );

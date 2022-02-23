@@ -39,13 +39,6 @@ const Newsletter = () => {
                 Submit
               </button>
             </div>
-            <div className="max-w-sm mt-3">
-              <p className="text-xs dark:text-lightText text-darkText">
-                By signing up you agree to our User Agreement (including the
-                class action waiver and arbitration provisions), our Privacy
-                Policy
-              </p>
-            </div>
           </div>
         </div>
       </div>

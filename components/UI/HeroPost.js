@@ -4,7 +4,7 @@ import React from "react";
 
 const HeroPost = ({ firstFeaturedPost }) => {
   return (
-    <Link href={`/posts/${firstFeaturedPost.slug}`}>
+    <Link href={`/post/${firstFeaturedPost.slug}`}>
       <div>
         <div className="aspect-video relative cursor-pointer">
           <Image

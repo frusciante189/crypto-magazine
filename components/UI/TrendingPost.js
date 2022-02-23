@@ -5,8 +5,8 @@ import React from "react";
 const TrendingPost = ({ trending }) => {
   return (
     <Link href={`/post/${trending.slug}`}>
-      <div className="flex md:flex-col items-center flex-row-reverse gap-x-8 py-4 md:first:py-4 first:pt-0 md:last:py-4 last:pb-0 ">
-        <div className="md:aspect-video w-[75px] h-[75px] md:w-full md:h-full relative md:flex-shrink flex-shrink-0 cursor-pointer">
+      <div className="flex md:flex-col items-center flex-row-reverse md:gap-x-8 gap-x-6 py-4 md:first:py-4 first:pt-0 md:last:py-4 last:pb-0 ">
+        <div className="md:aspect-video lg:h-[190px] md:h-[140px] w-[75px] h-[75px] md:w-full relative md:flex-shrink flex-shrink-0 cursor-pointer">
           <Image
             src={trending.featuredImage.url}
             layout="fill"

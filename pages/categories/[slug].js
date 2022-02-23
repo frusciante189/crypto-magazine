@@ -5,9 +5,9 @@ import CategoryHero from "../../components/Category/CategoryHero";
 import Posts from "../../components/Category/Posts";
 import SubCategory from "../../components/Category/SubCategory";
 import Navbar from "../../components/Navbar";
-import { getCategories } from "../../library";
+import { getCategories, getCategoryPosts } from "../../library";
 
-const Index = ({ categories }) => {
+const Index = ({ navCategories, categoryPosts }) => {
   const router = useRouter();
 
   const capitalize = (string) =>
@@ -15,7 +15,7 @@ const Index = ({ categories }) => {
 
   return (
     <>
-      <Navbar categories={categories} />
+      <Navbar categories={navCategories} />
       <div className="dark:bg-darkBg bg-white transition-all transform duration-500 ease-in-out lg:py-6 sm:py-4 py-2">
         <div className="max-w-screen-2xl mx-auto lg:px-8 sm:px-6 px-4 ">
           <h2 className="text-center font-mono text-5xl text-lightTitle dark:text-darkTitle">
@@ -28,7 +28,7 @@ const Index = ({ categories }) => {
             </h2>
             <SubCategory />
           </div>
-          <Posts />
+          <Posts categoryPosts={categoryPosts} />
         </div>
       </div>
     </>
@@ -37,12 +37,14 @@ const Index = ({ categories }) => {
 
 export default Index;
 
-export async function getStaticProps() {
-  const categories = (await getCategories()) || [];
+export async function getStaticProps({ params }) {
+  const navCategories = (await getCategories()) || [];
+  const categoryPosts = (await getCategoryPosts(params.slug)) || [];
 
   return {
     props: {
-      categories,
+      navCategories,
+      categoryPosts,
     },
   };
 }

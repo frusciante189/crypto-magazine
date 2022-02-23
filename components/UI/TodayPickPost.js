@@ -4,7 +4,7 @@ import React from "react";
 
 const TodayPickPost = ({ todayPost }) => {
   return (
-    <Link href={`/posts/${todayPost.slug}`}>
+    <Link href={`/post/${todayPost.slug}`}>
       <div className="first:pb-4 last:pt-4">
         <div className="relative aspect-video cursor-pointer">
           <Image

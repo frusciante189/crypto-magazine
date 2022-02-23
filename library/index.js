@@ -15,6 +15,28 @@ export const getCategories = async () => {
   return result.categories;
 };
 
+export const getAllPosts = async () => {
+  const query = gql`
+    query MyQuery {
+      posts {
+        title
+        slug
+        excerpt
+        categories {
+          name
+          slug
+        }
+        createdAt
+        featuredImage {
+          url
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result.posts;
+};
+
 export const getFirstFeaturedPost = async () => {
   const query = gql`
     query MyQuery {
@@ -107,6 +129,7 @@ export const getLatestHeroPosts = async () => {
       postsConnection(
         orderBy: createdAt_DESC
         where: { featured: false, todaysPick: false, trending: false }
+        first: 5
       ) {
         edges {
           node {
@@ -190,7 +213,7 @@ export const getHomeCulturePosts = async () => {
   const query = gql`
     query MyQuery {
       postsConnection(
-        where: { categories_some: { name: "Culture" } }
+        where: { categories_some: { name: "Kültür" } }
         orderBy: createdAt_DESC
         first: 3
       ) {
@@ -219,7 +242,7 @@ export const getHomeTechnologyPosts = async () => {
   const query = gql`
     query MyQuery {
       postsConnection(
-        where: { categories_some: { name: "Technology" } }
+        where: { categories_some: { name: "Teknoloji" } }
         orderBy: createdAt_DESC
         first: 3
       ) {
@@ -328,5 +351,34 @@ export const getHomeDeFiPosts = async () => {
     }
   `;
   const result = await request(graphqlAPI, query);
+  return result.postsConnection.edges;
+};
+
+export const getCategoryPosts = async (slug) => {
+  const query = gql`
+    query GetCategoryPosts($slug: String!) {
+      postsConnection(
+        orderBy: createdAt_DESC
+        where: { categories_some: { slug: $slug } }
+      ) {
+        edges {
+          node {
+            title
+            slug
+            excerpt
+            createdAt
+            featuredImage {
+              url
+            }
+            categories {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query, { slug });
   return result.postsConnection.edges;
 };

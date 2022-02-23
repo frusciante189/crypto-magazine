@@ -68,7 +68,7 @@ export default function Home({
   );
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   const categories = (await getCategories()) || [];
   const firstFeaturedPost = (await getFirstFeaturedPost()) || [];
   const todaysPick = (await getTodaysPicks()) || [];

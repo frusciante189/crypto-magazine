@@ -1,30 +1,36 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import moment from "moment";
 
-const SinglePost = () => {
+const SinglePost = ({ post }) => {
   return (
     <div className="grid grid-cols-12">
       <div className="col-span-9">
         <div className="grid grid-cols-12 gap-x-10">
-          <div className="aspect-square relative col-span-5">
-            <Image
-              src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
+          <Link href={`/post/${post.slug}`}>
+            <div className="aspect-square relative col-span-5 cursor-pointer">
+              <Image
+                src={post.featuredImage.url}
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+          </Link>
           <div className="col-span-7 my-auto">
-            <p className="font-mono uppercase text-sm dark:text-darkTitle text-lightTitle">
-              Ideas
-            </p>
-            <h2 className="mt-2 font-inter font-bold text-3xl">
-              The Case of the Creepy Algorithm That ‘Predicted’ Teen Pregnancy
-            </h2>
-            <p className="mt-4 font-barlow font-medium">
-              A government leader in Argentina hailed the AI, which was fed
-              invasive data about girls. The feminist pushback could inform the
-              future of health tech.
-            </p>
+            <Link href={`/post/${post.slug}`}>
+              <div>
+                <p className="font-mono uppercase text-sm dark:text-darkTitle text-lightTitle">
+                  {moment(post.createdAt).format("DD MMM YYYY")}
+                </p>
+                <h2 className="mt-2 font-inter font-bold text-3xl cursor-pointer hover:underline decoration-2 underline-offset-2 dark:text-darkTitle text-lightTitle">
+                  {post.title}
+                </h2>
+                <p className="mt-4 font-barlow font-medium cursor-pointer dark:text-darkText text-lightText">
+                  {post?.excerpt}
+                </p>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
