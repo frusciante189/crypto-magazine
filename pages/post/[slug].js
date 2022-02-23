@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar";
 import { getCategories, getPostDetails, getPosts } from "../../library";
 import moment from "moment";
 import Link from "next/link";
-import "prismjs/themes/prism-oneDark.css";
+import "prismjs/themes/prism-tomorrow.css";
 import Prism from "prismjs";
 
 const Index = ({ navCategories, postDetails }) => {
