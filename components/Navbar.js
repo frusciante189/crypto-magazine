@@ -13,15 +13,15 @@ const Navbar = ({ categories }) => {
       <header className="py-4 sticky top-0 left-0 font-mono dark:bg-darkBg bg-white transition-all transform duration-500 ease-in-out border-b dark:border-zinc-600 z-40">
         <div className="lg:px-8 sm:px-6 px-4">
           <div className="flex items-center justify-between">
-            <div className="flex lg:space-x-8 items-center space-x-4">
-              <div className="flex space-x-4 items-center">
+            <div className="flex lg:space-x-8 items-center space-x-2">
+              <div className="flex items-center">
                 <Link href="/">
                   <a className="lg:text-4xl sm:text-3xl text-2xl font-medium dark:text-darkTitle text-lightTitle">
                     Fruschain
                   </a>
                 </Link>
               </div>
-              <nav className="md:flex hidden items-center lg:space-x-2 space-x-1">
+              <nav className="md:flex hidden items-center lg:space-x-2 space-x-px">
                 {categories?.map((category, index) => {
                   return (
                     <Link
@@ -32,7 +32,9 @@ const Navbar = ({ categories }) => {
                       }`}
                       key={index}
                     >
-                      <a className="navLink">{category.name}</a>
+                      <a className="navLink dark:text-darkText text-lightText">
+                        {category.name}
+                      </a>
                     </Link>
                   );
                 })}

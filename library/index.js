@@ -382,3 +382,55 @@ export const getCategoryPosts = async (slug) => {
   const result = await request(graphqlAPI, query, { slug });
   return result.postsConnection.edges;
 };
+
+export const getPostDetails = async (slug) => {
+  const query = gql`
+    query GetPostDetail($slug: String!) {
+      post(where: { slug: $slug }) {
+        title
+        featuredImage {
+          url
+        }
+        createdAt
+        content {
+          html
+        }
+        categories {
+          name
+          slug
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query, { slug });
+  return result.post;
+};
+
+export const getPosts = async () => {
+  const query = gql`
+    query MyQuery {
+      postsConnection(orderBy: createdAt_DESC) {
+        edges {
+          node {
+            title
+            slug
+            featuredImage {
+              url
+            }
+            excerpt
+            content {
+              html
+            }
+            createdAt
+            categories {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result.postsConnection.edges;
+};

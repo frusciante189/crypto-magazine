@@ -3,11 +3,11 @@ import { FaFacebook, FaInstagram, FaTelegram, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="dark:bg-darkBg bg-white lg:py-20 sm:py-16 py-12 font-mono border-t transition-all transform duration-500 ease-in-out">
+    <footer className="dark:bg-white bg-darkBg lg:py-20 sm:py-16 py-12 font-mono border-t transition-all transform duration-500 ease-in-out">
       <div className="max-w-7xl mx-auto lg:px-8 sm:px-6 px-4">
         <div className="flex space-x-4 items-center justify-center">
           <Link href="/">
-            <a className="lg:text-4xl text-3xl font-medium dark:text-darkTitle text-lightTitle">
+            <a className="lg:text-4xl text-3xl font-medium dark:text-lightTitle text-darkTitle">
               Fruschain
             </a>
           </Link>
@@ -22,14 +22,14 @@ const Footer = () => {
         </nav>
 
         <div className="mt-10">
-          <div className="flex space-x-4 items-center justify-center dark:text-darkText text-lightText">
+          <div className="flex space-x-4 items-center justify-center dark:text-lightText text-darkText">
             <FaTwitter size={24} />
             <FaInstagram size={24} />
             <FaTelegram size={24} />
             <FaFacebook size={24} />
           </div>
         </div>
-        <p className="mt-7 text-center dark:text-darkText text-lightText">
+        <p className="mt-7 text-center dark:text-lightText text-darkText">
           &copy; Copyright 2021, All Rights Reserved
         </p>
       </div>
