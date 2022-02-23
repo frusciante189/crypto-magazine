@@ -7,7 +7,7 @@ const TodayPicks = ({ firstFeaturedPost, todaysPick }) => {
   return (
     <>
       <div className="md:border-t-2 border-black dark:border-white">
-        <div className="dark:bg-white bg-black dark:text-lightTitle text-darkTitle md:max-w-max max-w-full px-3 py-2 sm:py-1.5">
+        <div className="dark:bg-white bg-black dark:text-lightTitle text-darkTitle md:max-w-max max-w-full px-3 py-2 sm:py-1.5 md:block hidden">
           <p className="font-spaceMono uppercase text-sm font-bold tracking-wider select-none pointer-events-none">
             Günün Seçİmlerİ
           </p>

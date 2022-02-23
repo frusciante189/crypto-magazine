@@ -4,7 +4,7 @@ import TodayPicks from "./TodayPicks";
 
 const Hero = ({ firstFeaturedPost, todaysPick, latestHeroPosts }) => {
   return (
-    <div className="py-4">
+    <div className="lg:py-4 py-2">
       <div className="grid lg:grid-cols-12 grid-cols-1 gap-x-4 lg:gap-y-0 gap-y-10">
         <div className="lg:col-span-9">
           <TodayPicks
