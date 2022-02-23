@@ -7,7 +7,7 @@ import Link from "next/link";
 import "prismjs/themes/prism-oneDark.css";
 import Prism from "prismjs";
 
-const index = ({ navCategories, postDetails }) => {
+const Index = ({ navCategories, postDetails }) => {
   useEffect(() => {
     Prism.highlightAll();
   }, []);
@@ -67,7 +67,7 @@ const index = ({ navCategories, postDetails }) => {
   );
 };
 
-export default index;
+export default Index;
 
 export async function getStaticProps({ params }) {
   const postDetails = (await getPostDetails(params.slug)) || [];
