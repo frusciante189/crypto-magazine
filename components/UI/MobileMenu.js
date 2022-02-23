@@ -20,12 +20,24 @@ const MobileMenu = () => {
             Fruschain
           </h1>
           <nav className="flex flex-col items-start mt-10">
-            <span className="navLink text-base">Backchannel</span>
-            <span className="navLink text-base">Business</span>
-            <span className="navLink text-base">Culture</span>
-            <span className="navLink text-base">Gear</span>
-            <span className="navLink text-base">Ideas</span>
-            <span className="navLink text-base">Science</span>
+            <span className="navLink text-base dark:text-darkText text-lightText">
+              Backchannel
+            </span>
+            <span className="navLink text-base dark:text-darkText text-lightText">
+              Business
+            </span>
+            <span className="navLink text-base dark:text-darkText text-lightText">
+              Culture
+            </span>
+            <span className="navLink text-base dark:text-darkText text-lightText">
+              Gear
+            </span>
+            <span className="navLink text-base dark:text-darkText text-lightText">
+              Ideas
+            </span>
+            <span className="navLink text-base dark:text-darkText text-lightText">
+              Science
+            </span>
           </nav>
         </div>
         <div className="mt-auto">

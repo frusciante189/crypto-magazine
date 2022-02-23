@@ -11,7 +11,7 @@ const DarkMode = () => {
   return (
     <button
       onClick={themeHandler}
-      className="sm:p-2 p-1.5 rounded-lg text-lightTitle dark:text-darkTitle border dark:border-darkTitle dark:focus:border-transparent focus:border-transparent focus:outline-2 focus:outline-transparent focus:ring-2 focus:ring-[#F7931A]
+      className="sm:p-2 p-1.5 rounded-lg text-lightTitle dark:text-darkTitle border dark:border-darkTitle dark:focus:border-transparent focus:border-transparent focus:outline-2 focus:outline-transparent focus:ring-2 focus:ring-indigo-500
       transition-all transform duration-300 ease-in-out"
     >
       {theme === "light" ? (

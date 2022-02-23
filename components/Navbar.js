@@ -44,7 +44,7 @@ const Navbar = ({ categories }) => {
               <DarkMode />
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="md:hidden block sm:p-2 p-1.5 rounded-lg text-lightTitle dark:text-darkTitle border focus:border-transparent dark:focus:border-transparent focus:outline-2 focus:outline-transparent focus:ring-2 focus:ring-[#F7931A]
+                className="md:hidden block sm:p-2 p-1.5 focus:outline-none rounded-lg text-lightTitle dark:text-darkTitle border focus:border-transparent dark:focus:border-transparent focus:outline-2 focus:outline-transparent focus:ring-2 focus:ring-indigo-500
       transition-all transform duration-500 ease-in-out"
               >
                 <MenuIcon className="w-4 h-4" />
