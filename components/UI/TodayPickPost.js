@@ -6,7 +6,7 @@ const TodayPickPost = ({ todayPost }) => {
   return (
     <Link href={`/post/${todayPost.slug}`}>
       <div className="first:pb-4 last:pt-4">
-        <div className="relative aspect-video cursor-pointer">
+        <div className="relative aspect-w-16 aspect-h-9 cursor-pointer">
           <Image
             src={todayPost.featuredImage.url}
             layout="fill"

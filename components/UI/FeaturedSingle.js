@@ -14,7 +14,7 @@ const FeaturedSingle = () => {
           </h3>
         </div>
         <div className="col-span-1 items-center my-auto">
-          <div className="aspect-square relative">
+          <div className="lg:aspect-w-1 lg:aspect-h-1 relative">
             <Image
               src="https://images.unsplash.com/photo-1510070112810-d4e9a46d9e91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
               layout="fill"

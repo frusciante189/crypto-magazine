@@ -9,7 +9,7 @@ const SinglePost = ({ post }) => {
       <div className="col-span-9">
         <div className="grid grid-cols-12 gap-x-10">
           <Link href={`/post/${post.slug}`}>
-            <div className="aspect-square relative col-span-5 cursor-pointer">
+            <div className="lg:aspect-w-1 lg:aspect-h-1 relative col-span-5 cursor-pointer">
               <Image
                 src={post.featuredImage.url}
                 layout="fill"

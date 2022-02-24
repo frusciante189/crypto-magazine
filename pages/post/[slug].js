@@ -35,7 +35,7 @@ const Index = ({ navCategories, postDetails }) => {
                 {postDetails.title}
               </p>
             </div>
-            <div className="relative aspect-video">
+            <div className="relative aspect-w-16 aspect-h-9">
               <Image
                 src={postDetails.featuredImage.url}
                 layout="fill"

@@ -13,7 +13,7 @@ const Category = ({ post }) => {
         </div>
       </Link>
       <Link href={`/posts/${post[0].node.slug}`}>
-        <div className="aspect-video relative cursor-pointer">
+        <div className="aspect-w-16 aspect-h-9 relative cursor-pointer">
           <Image
             src={post[0].node.featuredImage.url}
             layout="fill"

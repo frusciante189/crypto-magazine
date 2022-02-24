@@ -4,7 +4,7 @@ import React from "react";
 const PostHeroPost = () => {
   return (
     <div className="pr-4 h-full flex flex-col">
-      <div className="lg:aspect-square aspect-video relative">
+      <div className="lg:aspect-w-1 lg:aspect-h-1 aspect-w-16 aspect-h-9 relative">
         <Image
           src="https://images.unsplash.com/photo-1595285203796-2da1c77274e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
           layout="fill"

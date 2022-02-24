@@ -6,7 +6,7 @@ const SinglePost = ({ post }) => {
     <div className="grid grid-cols-12">
       <div className="col-span-9">
         <div className="grid grid-cols-12 gap-x-10">
-          <div className="aspect-square relative col-span-5">
+          <div className="aspect-w-1 aspect-h-1 relative col-span-5">
             <Image
               src={post.featuredImage.url}
               layout="fill"

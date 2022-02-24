@@ -5,7 +5,7 @@ const FeaturedPost = ({ otherFeaturedPost }) => {
   return (
     <div className="grid lg:grid-cols-12 grid-cols-1 lg:gap-x-8 gap-y-4 mt-6">
       <div className="col-span-8">
-        <div className="aspect-video relative">
+        <div className="aspect-w-16 aspect-h-9 relative">
           <Image
             src={otherFeaturedPost.featuredImage.url}
             layout="fill"

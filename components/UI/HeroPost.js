@@ -6,10 +6,12 @@ const HeroPost = ({ firstFeaturedPost }) => {
   return (
     <Link href={`/post/${firstFeaturedPost.slug}`}>
       <div>
-        <div className="aspect-video relative cursor-pointer">
-          <img
+        <div className="aspect-w-16 aspect-h-9 relative cursor-pointer">
+          <Image
             src={firstFeaturedPost.featuredImage.url}
-            className="w-full h-full object-cover"
+            layout="fill"
+            objectFit="cover"
+            priority
           />
         </div>
         <div className="mt-4">
