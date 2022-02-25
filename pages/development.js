@@ -71,13 +71,25 @@ const development = () => {
               <div className="mt-4">
                 <div className="grid grid-cols-3 gap-x-10">
                   <div className="aspect-w-1 aspect-h-1 relative overflow-hidden">
-                    <Image layout="fill" objectFit="cover" src={img} />
+                    <Image
+                      layout="fill"
+                      objectFit="cover"
+                      src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1561&q=80"
+                    />
                   </div>
                   <div className="aspect-w-1 aspect-h-1 relative overflow-hidden">
-                    <Image layout="fill" objectFit="cover" src={img} />
+                    <Image
+                      layout="fill"
+                      objectFit="cover"
+                      src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1561&q=80"
+                    />
                   </div>
                   <div className="aspect-w-1 aspect-h-1 relative overflow-hidden">
-                    <Image layout="fill" objectFit="cover" src={img} />
+                    <Image
+                      layout="fill"
+                      objectFit="cover"
+                      src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1561&q=80"
+                    />
                   </div>
                 </div>
               </div>
@@ -98,13 +110,25 @@ const development = () => {
               <div className="mt-4">
                 <div className="grid grid-cols-3 gap-x-10">
                   <div className="aspect-w-1 aspect-h-1 relative overflow-hidden">
-                    <Image layout="fill" objectFit="cover" src={img} />
+                    <Image
+                      layout="fill"
+                      objectFit="cover"
+                      src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1561&q=80"
+                    />
                   </div>
                   <div className="aspect-w-1 aspect-h-1 relative overflow-hidden">
-                    <Image layout="fill" objectFit="cover" src={img} />
+                    <Image
+                      layout="fill"
+                      objectFit="cover"
+                      src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1561&q=80"
+                    />
                   </div>
                   <div className="aspect-w-1 aspect-h-1 relative overflow-hidden">
-                    <Image layout="fill" objectFit="cover" src={img} />
+                    <Image
+                      layout="fill"
+                      objectFit="cover"
+                      src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1561&q=80"
+                    />
                   </div>
                 </div>
               </div>
@@ -125,13 +149,25 @@ const development = () => {
               <div className="mt-4">
                 <div className="grid grid-cols-3 gap-x-10">
                   <div className="aspect-w-1 aspect-h-1 relative overflow-hidden">
-                    <Image layout="fill" objectFit="cover" src={img} />
+                    <Image
+                      layout="fill"
+                      objectFit="cover"
+                      src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1561&q=80"
+                    />
                   </div>
                   <div className="aspect-w-1 aspect-h-1 relative overflow-hidden">
-                    <Image layout="fill" objectFit="cover" src={img} />
+                    <Image
+                      layout="fill"
+                      objectFit="cover"
+                      src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1561&q=80"
+                    />
                   </div>
                   <div className="aspect-w-1 aspect-h-1 relative overflow-hidden">
-                    <Image layout="fill" objectFit="cover" src={img} />
+                    <Image
+                      layout="fill"
+                      objectFit="cover"
+                      src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1561&q=80"
+                    />
                   </div>
                 </div>
               </div>
