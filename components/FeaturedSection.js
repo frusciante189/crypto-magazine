@@ -8,7 +8,7 @@ const FeaturedSection = ({ otherFeaturedPost }) => {
     <div className="py-4">
       <div className="md:border-t-2 border-black dark:border-white">
         <Link href={`/categories/${otherFeaturedPost.categories[0].slug}`}>
-          <div className="dark:bg-white bg-black dark:text-lightTitle text-darkTitle md:max-w-max max-w-full px-3 py-2 sm:py-1.5">
+          <div className="dark:bg-white bg-black dark:text-lightTitle text-darkTitle md:max-w-max max-w-full px-3 py-2 sm:py-1.5 cursor-pointer">
             <p className="font-spaceMono uppercase text-sm font-bold tracking-wider">
               {otherFeaturedPost.categories[0].name}
             </p>

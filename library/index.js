@@ -434,3 +434,32 @@ export const getPosts = async () => {
   const result = await request(graphqlAPI, query);
   return result.postsConnection.edges;
 };
+
+export const getMorePosts = async () => {
+  const query = gql`
+    query MyQuery {
+      postsConnection(orderBy: createdAt_DESC, first: 8) {
+        edges {
+          node {
+            title
+            slug
+            featuredImage {
+              url
+            }
+            excerpt
+            content {
+              html
+            }
+            createdAt
+            categories {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result.postsConnection.edges;
+};
