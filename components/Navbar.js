@@ -1,16 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
 import { MenuIcon } from "@heroicons/react/outline";
 import DarkMode from "./UI/DarkMode";
 import Link from "next/link";
 import MobileMenu from "./UI/MobileMenu";
 import Overlay from "./UI/Overlay";
 import { useProvider } from "../context/context";
+import { motion } from "framer-motion";
+
+const easing = [0.6, -0.05, 0.01, 0.99];
+
+const fadeInUp = {
+  initial: {
+    y: 60,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      ease: easing,
+    },
+  },
+};
 
 const Navbar = ({ categories }) => {
   const { isOpen, setIsOpen } = useProvider();
   return (
     <>
-      <header className="py-4 sticky top-0 left-0 font-mono dark:bg-darkBg bg-white transition-all transform duration-500 ease-in-out border-b dark:border-zinc-600 z-40">
+      <motion.header
+        variants={fadeInUp}
+        className="py-4 sticky top-0 left-0 font-mono dark:bg-darkBg bg-white transition-all transform duration-500 ease-in-out border-b dark:border-zinc-600 z-40"
+      >
         <div className="lg:px-8 sm:px-6 px-4">
           <div className="flex items-center justify-between">
             <div className="flex lg:space-x-8 items-center space-x-2">
@@ -52,7 +73,7 @@ const Navbar = ({ categories }) => {
             </div>
           </div>
         </div>
-      </header>
+      </motion.header>
       <MobileMenu
         isOpen={isOpen}
         setIsOpen={setIsOpen}

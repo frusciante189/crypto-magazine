@@ -1,9 +1,27 @@
 import React from "react";
 import TrendingPost from "./UI/TrendingPost";
+import { motion } from "framer-motion";
+
+const easing = [0.6, -0.05, 0.01, 0.99];
+
+const fadeInUp = {
+  initial: {
+    y: 60,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: easing,
+    },
+  },
+};
 
 const Trending = ({ trendingPosts }) => {
   return (
-    <div className="py-4">
+    <motion.div variants={fadeInUp} className="py-4">
       <div className="md:border-t-2 border-black dark:border-white">
         <div className="flex space-x-6 items-center">
           <div className="dark:bg-white bg-black dark:text-lightTitle text-darkTitle md:max-w-max max-w-full px-3 py-2 sm:py-1.5 flex-1">
@@ -21,7 +39,7 @@ const Trending = ({ trendingPosts }) => {
           return <TrendingPost trending={trending.node} key={index} />;
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

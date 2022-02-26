@@ -22,6 +22,14 @@ import {
   getTrendingPosts,
 } from "../library";
 
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
 export default function Home({
   categories,
   firstFeaturedPost,
@@ -37,20 +45,24 @@ export default function Home({
   deFiPosts,
 }) {
   return (
-    <motion.div exit={{ opacity: 0 }}>
+    <motion.div exit="exit" initial="initial" animate="animate">
       <Head>
         <title>Fruschain</title>
         <meta name="description" content="Frus Nextjs Blog Course" />
       </Head>
       <Navbar categories={categories} />
       <div className="dark:bg-darkBg bg-white transition-all transform duration-500 ease-in-out lg:py-6 sm:py-4 py-2">
-        <div className="max-w-screen-2xl mx-auto lg:px-8 sm:px-6 px-4 ">
+        <motion.div
+          variants={stagger}
+          className="max-w-screen-2xl mx-auto lg:px-8 sm:px-6 px-4 "
+        >
           <Hero
             firstFeaturedPost={firstFeaturedPost}
             todaysPick={todaysPick}
             latestHeroPosts={latestHeroPosts}
           />
           <Trending trendingPosts={trendingPosts} />
+
           <FeaturedSection otherFeaturedPost={otherFeaturedPosts[0].node} />
           <Categories
             nftPosts={nftPosts}
@@ -61,7 +73,7 @@ export default function Home({
             deFiPosts={deFiPosts}
           />
           <FeaturedSection otherFeaturedPost={otherFeaturedPosts[1].node} />
-        </div>
+        </motion.div>
         <Newsletter />
         <FeaturedVideos />
       </div>
