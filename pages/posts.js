@@ -3,12 +3,18 @@ import Navbar from "../components/Navbar";
 import PostHero from "../components/PostsPage/PostHero";
 import SinglePost from "../components/PostsPage/UI/SinglePost";
 import { getAllPosts, getCategories, getFirst4Posts } from "../library";
+import { motion } from "framer-motion";
 
 const posts = ({ categories, allPosts, first4posts }) => {
   return (
-    <>
+    <motion.div exit={{ opacity: 0 }}>
       <Navbar categories={categories} />
-      <div className="dark:bg-darkBg bg-white transition-all transform duration-500 ease-in-out lg:py-6 sm:py-4 py-2">
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.2 }}
+        className="dark:bg-darkBg bg-white transition-all transform duration-500 ease-in-out lg:py-6 sm:py-4 py-2"
+      >
         <div className="max-w-screen-2xl mx-auto lg:px-8 sm:px-6 px-4 ">
           <h2 className="text-center font-mono text-5xl text-lightTitle dark:text-darkTitle">
             Haberler
@@ -25,8 +31,8 @@ const posts = ({ categories, allPosts, first4posts }) => {
             })}
           </div>
         </div>
-      </div>
-    </>
+      </motion.div>
+    </motion.div>
   );
 };
 
