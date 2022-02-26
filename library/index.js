@@ -173,6 +173,62 @@ export const getLatestHeroPosts = async () => {
   return result.postsConnection.edges;
 };
 
+export const get5Latest = async () => {
+  const query = gql`
+    query MyQuery {
+      postsConnection(
+        orderBy: createdAt_DESC
+        where: { featured: false, todaysPick: false, trending: false }
+        first: 4
+      ) {
+        edges {
+          node {
+            title
+            slug
+            featuredImage {
+              url
+            }
+            categories {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result.postsConnection.edges;
+};
+
+export const get10Latest = async () => {
+  const query = gql`
+    query MyQuery {
+      postsConnection(
+        orderBy: createdAt_DESC
+        where: { featured: false, todaysPick: false, trending: false }
+        first: 4
+      ) {
+        edges {
+          node {
+            title
+            slug
+            featuredImage {
+              url
+            }
+            categories {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result.postsConnection.edges;
+};
+
 export const getTrendingPosts = async () => {
   const query = gql`
     query MyQuery {

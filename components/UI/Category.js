@@ -12,7 +12,7 @@ const Category = ({ post }) => {
           </p>
         </div>
       </Link>
-      <Link href={`/posts/${post[0].node.slug}`}>
+      <Link href={`/post/${post[0].node.slug}`}>
         <div className="aspect-w-16 aspect-h-9 relative cursor-pointer">
           <Image
             src={post[0].node.featuredImage.url}
@@ -24,7 +24,7 @@ const Category = ({ post }) => {
       <div className="divide-y dark:text-darkText text-lightText">
         {post.map((item, index) => {
           return (
-            <Link href={`/posts/${item.node.slug}`} key={index}>
+            <Link href={`/post/${item.node.slug}`} key={index}>
               <h3 className="py-2.5 font-inter text-lg font-bold cursor-pointer hover:underline decoration-2 underline-offset-2">
                 {item.node.title}
               </h3>

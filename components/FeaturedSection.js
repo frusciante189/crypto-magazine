@@ -3,7 +3,7 @@ import React from "react";
 import FeaturedPost from "./UI/FeaturedPost";
 import FeaturedSingle from "./UI/FeaturedSingle";
 
-const FeaturedSection = ({ otherFeaturedPost }) => {
+const FeaturedSection = ({ otherFeaturedPost, lastPosts }) => {
   return (
     <div className="py-4">
       <div className="md:border-t-2 border-black dark:border-white">
@@ -20,10 +20,9 @@ const FeaturedSection = ({ otherFeaturedPost }) => {
           <FeaturedPost otherFeaturedPost={otherFeaturedPost} />
         </div>
         <div className="py-4 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:divide-x divide-y lg:divide-y-0 gap-x-5">
-          <FeaturedSingle />
-          <FeaturedSingle />
-          <FeaturedSingle />
-          <FeaturedSingle />
+          {lastPosts.map((post, index) => {
+            return <FeaturedSingle post={post.node} key={index} />;
+          })}
         </div>
       </div>
     </div>

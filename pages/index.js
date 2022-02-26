@@ -8,6 +8,8 @@ import Newsletter from "../components/Newsletter";
 import Trending from "../components/Trending";
 import { motion } from "framer-motion";
 import {
+  get10Latest,
+  get5Latest,
   getCategories,
   getFirstFeaturedPost,
   getHomeBlockchainPosts,
@@ -60,6 +62,8 @@ export default function Home({
   metaversePosts,
   blockchainPosts,
   deFiPosts,
+  last5,
+  last10,
 }) {
   return (
     <motion.div
@@ -83,8 +87,10 @@ export default function Home({
             latestHeroPosts={latestHeroPosts}
           />
           <Trending trendingPosts={trendingPosts} />
-
-          <FeaturedSection otherFeaturedPost={otherFeaturedPosts[0].node} />
+          <FeaturedSection
+            otherFeaturedPost={otherFeaturedPosts[0].node}
+            lastPosts={last5}
+          />
           <Categories
             nftPosts={nftPosts}
             culturePosts={culturePosts}
@@ -93,7 +99,10 @@ export default function Home({
             blockchainPosts={blockchainPosts}
             deFiPosts={deFiPosts}
           />
-          <FeaturedSection otherFeaturedPost={otherFeaturedPosts[1].node} />
+          <FeaturedSection
+            otherFeaturedPost={otherFeaturedPosts[1].node}
+            lastPosts={last10}
+          />
         </div>
         <Newsletter />
         <FeaturedVideos />
@@ -115,6 +124,8 @@ export async function getStaticProps() {
   const metaversePosts = (await getHomeMetaversePosts()) || [];
   const blockchainPosts = (await getHomeBlockchainPosts()) || [];
   const deFiPosts = (await getHomeDeFiPosts()) || [];
+  const last5 = (await get5Latest()) || [];
+  const last10 = (await get10Latest()) || [];
 
   return {
     props: {
@@ -130,6 +141,8 @@ export async function getStaticProps() {
       metaversePosts,
       blockchainPosts,
       deFiPosts,
+      last5,
+      last10,
     },
   };
 }
