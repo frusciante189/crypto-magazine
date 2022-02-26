@@ -3,7 +3,7 @@ import React from "react";
 
 const FeaturedPost = ({ otherFeaturedPost }) => {
   return (
-    <div className="grid lg:grid-cols-12 grid-cols-1 lg:gap-x-8 gap-y-4 mt-6">
+    <div className="grid lg:grid-cols-12 grid-cols-1 lg:gap-x-8 gap-y-4 lg:mt-6 mt-2">
       <div className="col-span-8">
         <div className="aspect-w-16 aspect-h-9 relative">
           <Image

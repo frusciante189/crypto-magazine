@@ -80,7 +80,6 @@ const Index = ({ navCategories, postDetails, morePosts }) => {
           <div className="mt-10">
             <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-10">
               {morePosts.map((spost, index) => {
-                console.log(spost);
                 return (
                   <div className="" key={index}>
                     <Link href={spost.node.slug}>

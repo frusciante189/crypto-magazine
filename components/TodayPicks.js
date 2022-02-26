@@ -13,7 +13,7 @@ const TodayPicks = ({ firstFeaturedPost, todaysPick }) => {
           </p>
         </div>
       </div>
-      <div className="grid md:grid-cols-9 grid-cols-1 md:gap-x-8 mt-8">
+      <div className="grid md:grid-cols-9 grid-cols-1 md:gap-x-8 lg:mt-8">
         <div className="col-span-3 divide-y mt-6 md:mt-0">
           {todaysPick.map((todayPost, index) => {
             return <TodayPickPost todayPost={todayPost.node} key={index} />;

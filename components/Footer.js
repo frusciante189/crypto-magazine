@@ -13,12 +13,30 @@ const Footer = () => {
           </Link>
         </div>
         <nav className="flex sm:flex-row flex-col items-center justify-center lg:space-x-2 space-x-1 md:mt-10 mt-5">
-          <span className="navLink text-lg">Backchannel</span>
-          <span className="navLink text-lg">Business</span>
-          <span className="navLink text-lg">Culture</span>
-          <span className="navLink text-lg">Gear</span>
-          <span className="navLink text-lg">Ideas</span>
-          <span className="navLink text-lg">Science</span>
+          <Link href="/posts">
+            <a className="navLink text-lg">Haberler</a>
+          </Link>
+          <Link href="/categories/nft">
+            <a className="navLink text-lg">NFT</a>
+          </Link>
+          <Link href="/categories/kultur">
+            <a className="navLink text-lg">Kültür</a>
+          </Link>
+          <Link href="/categories/teknoloji">
+            <a className="navLink text-lg">Teknoloji</a>
+          </Link>
+          <Link href="/categories/metaverse">
+            <a className="navLink text-lg">Metaverse</a>
+          </Link>
+          <Link href="/categories/blockchain">
+            <a className="navLink text-lg">Blockchain</a>
+          </Link>
+          <Link href="/categories/defi">
+            <a className="navLink text-lg">DeFi</a>
+          </Link>
+          <Link href="/development">
+            <a className="navLink text-lg">Development</a>
+          </Link>
         </nav>
 
         <div className="mt-10">

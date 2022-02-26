@@ -26,9 +26,9 @@ const Navbar = ({ categories }) => {
                   return (
                     <Link
                       href={`${
-                        category.name === "Haberler"
-                          ? "/posts"
-                          : `/categories/${category.slug}`
+                        (category.name === "Haberler" && "/posts") ||
+                        (category.name === "Development" && "/development") ||
+                        `/categories/${category.slug}`
                       }`}
                       key={index}
                     >
@@ -53,7 +53,11 @@ const Navbar = ({ categories }) => {
           </div>
         </div>
       </header>
-      <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+      <MobileMenu
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        categories={categories}
+      />
       <Overlay isOpen={isOpen} />
     </>
   );

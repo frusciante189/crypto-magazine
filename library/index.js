@@ -18,7 +18,29 @@ export const getCategories = async () => {
 export const getAllPosts = async () => {
   const query = gql`
     query MyQuery {
-      posts {
+      posts(skip: 4) {
+        title
+        slug
+        excerpt
+        categories {
+          name
+          slug
+        }
+        createdAt
+        featuredImage {
+          url
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result.posts;
+};
+
+export const getFirst4Posts = async () => {
+  const query = gql`
+    query MyQuery {
+      posts(first: 4) {
         title
         slug
         excerpt
@@ -360,6 +382,37 @@ export const getCategoryPosts = async (slug) => {
       postsConnection(
         orderBy: createdAt_DESC
         where: { categories_some: { slug: $slug } }
+        skip: 4
+      ) {
+        edges {
+          node {
+            title
+            slug
+            excerpt
+            createdAt
+            featuredImage {
+              url
+            }
+            categories {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query, { slug });
+  return result.postsConnection.edges;
+};
+
+export const getFirst4CategoryPosts = async (slug) => {
+  const query = gql`
+    query GetCategoryPosts($slug: String!) {
+      postsConnection(
+        orderBy: createdAt_DESC
+        where: { categories_some: { slug: $slug } }
+        first: 4
       ) {
         edges {
           node {

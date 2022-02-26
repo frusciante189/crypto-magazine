@@ -1,9 +1,10 @@
 import { XIcon } from "@heroicons/react/outline";
+import Link from "next/link";
 import { FaFacebook, FaInstagram, FaTelegram, FaTwitter } from "react-icons/fa";
 import { useProvider } from "../../context/context";
 import DarkMode from "./DarkMode";
 
-const MobileMenu = () => {
+const MobileMenu = ({ categories }) => {
   const { isOpen, setIsOpen, ref } = useProvider();
 
   return (
@@ -20,24 +21,22 @@ const MobileMenu = () => {
             Fruschain
           </h1>
           <nav className="flex flex-col items-start mt-10">
-            <span className="navLink text-base dark:text-darkText text-lightText">
-              Backchannel
-            </span>
-            <span className="navLink text-base dark:text-darkText text-lightText">
-              Business
-            </span>
-            <span className="navLink text-base dark:text-darkText text-lightText">
-              Culture
-            </span>
-            <span className="navLink text-base dark:text-darkText text-lightText">
-              Gear
-            </span>
-            <span className="navLink text-base dark:text-darkText text-lightText">
-              Ideas
-            </span>
-            <span className="navLink text-base dark:text-darkText text-lightText">
-              Science
-            </span>
+            {categories?.map((category, index) => {
+              return (
+                <Link
+                  href={`${
+                    (category.name === "Haberler" && "/posts") ||
+                    (category.name === "Development" && "/development") ||
+                    `/categories/${category.slug}`
+                  }`}
+                  key={index}
+                >
+                  <a className="navLink dark:text-darkText text-lightText">
+                    {category.name}
+                  </a>
+                </Link>
+              );
+            })}
           </nav>
         </div>
         <div className="mt-auto">

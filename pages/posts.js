@@ -2,9 +2,9 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import PostHero from "../components/PostsPage/PostHero";
 import SinglePost from "../components/PostsPage/UI/SinglePost";
-import { getAllPosts, getCategories } from "../library";
+import { getAllPosts, getCategories, getFirst4Posts } from "../library";
 
-const posts = ({ categories, allPosts }) => {
+const posts = ({ categories, allPosts, first4posts }) => {
   return (
     <>
       <Navbar categories={categories} />
@@ -13,7 +13,7 @@ const posts = ({ categories, allPosts }) => {
           <h2 className="text-center font-mono text-5xl text-lightTitle dark:text-darkTitle">
             Haberler
           </h2>
-          <PostHero />
+          <PostHero posts={first4posts} />
           <div>
             <h2 className="font-mono text-center py-4 text-4xl border-b dark:text-darkTitle text-lightTitle">
               The Future Of Futures
@@ -35,11 +35,13 @@ export default posts;
 export async function getStaticProps() {
   const allPosts = (await getAllPosts()) || [];
   const categories = (await getCategories()) || [];
+  const first4posts = (await getFirst4Posts()) || [];
 
   return {
     props: {
       allPosts,
       categories,
+      first4posts,
     },
   };
 }

@@ -30,7 +30,7 @@ const development = () => {
                 </div>
               </div>
               <div className="mt-4">
-                <div className="grid grid-cols-3 gap-x-10">
+                <div className="grid grid-cols-3 lg:gap-x-10 gap-x-5">
                   <div className="aspect-w-1 aspect-h-1 relative overflow-hidden">
                     <Image
                       layout="fill"
