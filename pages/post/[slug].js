@@ -24,36 +24,42 @@ const Index = ({ navCategories, postDetails, morePosts }) => {
       <div className="lg:py-12 sm:py-8 py-6 dark:bg-darkBg bg-white transition-all transform duration-500 ease-in-out">
         <div className="max-w-5xl mx-auto lg:px-8 sm:px-6 px-4">
           <div>
-            <div className="md:mb-10 mb-5">
-              <div className="flex space-x-3 items-center justify-between md:justify-start">
-                <Link href={`/tags/${postDetails.categories[0].slug}`}>
-                  <div className="dark:bg-white bg-black dark:text-lightTitle text-darkTitle max-w-max px-3 py-2 sm:py-1.5 flex-1 cursor-pointer">
-                    <p className="font-spaceMono uppercase text-sm font-bold tracking-wider select-none">
-                      {postDetails.categories[0].name}
-                    </p>
-                  </div>
-                </Link>
-                <p className="dark:text-darkTitle text-lightTitle font-mono uppercase text-sm select-none pointer-events-none">
-                  {moment(postDetails.createdAt).format("DD MMMM YYYY")}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              <div className="md:mb-10 mb-5">
+                <div className="flex space-x-3 items-center justify-between md:justify-start">
+                  <Link href={`/tags/${postDetails.categories[0].slug}`}>
+                    <div className="dark:bg-white bg-black dark:text-lightTitle text-darkTitle max-w-max px-3 py-2 sm:py-1.5 flex-1 cursor-pointer">
+                      <p className="font-spaceMono uppercase text-sm font-bold tracking-wider select-none">
+                        {postDetails.categories[0].name}
+                      </p>
+                    </div>
+                  </Link>
+                  <p className="dark:text-darkTitle text-lightTitle font-mono uppercase text-sm select-none pointer-events-none">
+                    {moment(postDetails.createdAt).format("DD MMMM YYYY")}
+                  </p>
+                </div>
+                <p className="font-inter font-bold md:text-5xl text-4xl dark:text-darkTitle text-lightTitle mt-5 text-center">
+                  {postDetails.title}
                 </p>
               </div>
-              <p className="font-inter font-bold md:text-5xl text-4xl dark:text-darkTitle text-lightTitle mt-5 text-center">
-                {postDetails.title}
-              </p>
-            </div>
-            <div className="relative aspect-w-16 aspect-h-9">
-              <Image
-                src={postDetails.featuredImage.url}
-                layout="fill"
-                objectFit="cover"
-              />
-            </div>
-            <div className="md:mt-10 mt-5">
-              <div
-                className="font-barlow language-javascript prose max-w-none prose-lg prose-img:mx-auto prose-img:max-h-[700px] prose-img:object-cover prose-neutral dark:prose-invert"
-                dangerouslySetInnerHTML={{ __html: postDetails.content.html }}
-              />
-            </div>
+              <div className="relative aspect-w-16 aspect-h-9">
+                <Image
+                  src={postDetails.featuredImage.url}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+              <div className="md:mt-10 mt-5">
+                <div
+                  className="font-barlow language-javascript prose max-w-none prose-lg prose-img:mx-auto prose-img:max-h-[700px] prose-img:object-cover prose-neutral dark:prose-invert"
+                  dangerouslySetInnerHTML={{ __html: postDetails.content.html }}
+                />
+              </div>
+            </motion.div>
             <div className="border-t-2 border-b">
               <div className="flex md:py-4 py-2.5 ml-2 font-mono text-sm dark:text-darkText text-lightText">
                 <p>Topics</p>

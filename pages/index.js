@@ -30,6 +30,23 @@ const stagger = {
   },
 };
 
+const easing = [0.6, -0.05, 0.01, 0.99];
+
+const fadeInUp = {
+  initial: {
+    y: 5,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: easing,
+    },
+  },
+};
+
 export default function Home({
   categories,
   firstFeaturedPost,
@@ -46,7 +63,7 @@ export default function Home({
 }) {
   return (
     <motion.div
-      exit="exit"
+      exit={{ opacity: 1 }}
       initial="initial"
       animate="animate"
       variants={stagger}
@@ -55,7 +72,9 @@ export default function Home({
         <title>Fruschain</title>
         <meta name="description" content="Frus Nextjs Blog Course" />
       </Head>
-      <Navbar categories={categories} />
+      <motion.div variants={fadeInUp}>
+        <Navbar categories={categories} />
+      </motion.div>
       <div className="dark:bg-darkBg bg-white transition-all transform duration-500 ease-in-out lg:py-6 sm:py-4 py-2">
         <div className="max-w-screen-2xl mx-auto lg:px-8 sm:px-6 px-4 ">
           <Hero
