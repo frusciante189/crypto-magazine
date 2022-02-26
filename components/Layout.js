@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Provider from "../context/context";
 import Footer from "./Footer";
-import Navbar from "./Navbar";
+import { AnimatePresence } from "framer-motion";
 
 const Layout = ({ children }) => {
   return (
     <Provider>
-      <main className="antialiased">{children}</main>
-      <Footer />
+      <AnimatePresence exitBeforeEnter>
+        <main className="antialiased">{children}</main>
+        <Footer />
+      </AnimatePresence>
     </Provider>
   );
 };

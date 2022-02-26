@@ -11,6 +11,7 @@ import moment from "moment";
 import Link from "next/link";
 import "prismjs/themes/prism-tomorrow.css";
 import Prism from "prismjs";
+import { motion } from "framer-motion";
 
 const Index = ({ navCategories, postDetails, morePosts }) => {
   useEffect(() => {
@@ -18,7 +19,7 @@ const Index = ({ navCategories, postDetails, morePosts }) => {
   }, []);
 
   return (
-    <>
+    <motion.div exit={{ opacity: 0 }}>
       <Navbar categories={navCategories} />
       <div className="lg:py-12 sm:py-8 py-6 dark:bg-darkBg bg-white transition-all transform duration-500 ease-in-out">
         <div className="max-w-5xl mx-auto lg:px-8 sm:px-6 px-4">
@@ -113,7 +114,7 @@ const Index = ({ navCategories, postDetails, morePosts }) => {
           </div>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 };
 

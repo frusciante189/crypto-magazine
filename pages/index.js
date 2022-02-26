@@ -6,6 +6,7 @@ import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import Trending from "../components/Trending";
+import { motion } from "framer-motion";
 import {
   getCategories,
   getFirstFeaturedPost,
@@ -36,7 +37,7 @@ export default function Home({
   deFiPosts,
 }) {
   return (
-    <>
+    <motion.div exit={{ opacity: 0 }}>
       <Head>
         <title>Fruschain</title>
         <meta name="description" content="Frus Nextjs Blog Course" />
@@ -64,7 +65,7 @@ export default function Home({
         <Newsletter />
         <FeaturedVideos />
       </div>
-    </>
+    </motion.div>
   );
 }
 
