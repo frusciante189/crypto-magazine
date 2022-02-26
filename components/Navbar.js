@@ -28,7 +28,7 @@ const Navbar = ({ categories }) => {
                       href={`${
                         (category.name === "Haberler" && "/posts") ||
                         (category.name === "Development" && "/development") ||
-                        `/categories/${category.slug}`
+                        `/tags/${category.slug}`
                       }`}
                       key={index}
                     >

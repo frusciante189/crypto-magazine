@@ -25,7 +25,7 @@ const Index = ({ navCategories, postDetails, morePosts }) => {
           <div>
             <div className="md:mb-10 mb-5">
               <div className="flex space-x-3 items-center justify-between md:justify-start">
-                <Link href={`/categories/${postDetails.categories[0].slug}`}>
+                <Link href={`/tags/${postDetails.categories[0].slug}`}>
                   <div className="dark:bg-white bg-black dark:text-lightTitle text-darkTitle max-w-max px-3 py-2 sm:py-1.5 flex-1 cursor-pointer">
                     <p className="font-spaceMono uppercase text-sm font-bold tracking-wider select-none">
                       {postDetails.categories[0].name}
@@ -59,7 +59,7 @@ const Index = ({ navCategories, postDetails, morePosts }) => {
                 <div className="ml-10">
                   {postDetails.categories.map((category, index) => {
                     return (
-                      <Link href={`/categories/${category.slug}`} key={index}>
+                      <Link href={`/tags/${category.slug}`} key={index}>
                         <a>{category.name}</a>
                       </Link>
                     );
@@ -101,7 +101,7 @@ const Index = ({ navCategories, postDetails, morePosts }) => {
                         {spost.node.excerpt}
                       </p>
                     </Link>
-                    <Link href={`/categories/${spost.node.categories[0].slug}`}>
+                    <Link href={`/tags/${spost.node.categories[0].slug}`}>
                       <h3 className="mt-2 font-spaceMono font-bold cursor-pointer text-sm tracking-wider">
                         {spost.node.categories[0].name}
                       </h3>

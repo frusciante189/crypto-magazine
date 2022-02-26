@@ -16,22 +16,22 @@ const Footer = () => {
           <Link href="/posts">
             <a className="navLink text-lg">Haberler</a>
           </Link>
-          <Link href="/categories/nft">
+          <Link href="/tags/nft">
             <a className="navLink text-lg">NFT</a>
           </Link>
-          <Link href="/categories/kultur">
+          <Link href="/tags/kultur">
             <a className="navLink text-lg">Kültür</a>
           </Link>
-          <Link href="/categories/teknoloji">
+          <Link href="/tags/teknoloji">
             <a className="navLink text-lg">Teknoloji</a>
           </Link>
-          <Link href="/categories/metaverse">
+          <Link href="/tags/metaverse">
             <a className="navLink text-lg">Metaverse</a>
           </Link>
-          <Link href="/categories/blockchain">
+          <Link href="/tags/blockchain">
             <a className="navLink text-lg">Blockchain</a>
           </Link>
-          <Link href="/categories/defi">
+          <Link href="/tags/defi">
             <a className="navLink text-lg">DeFi</a>
           </Link>
           <Link href="/development">

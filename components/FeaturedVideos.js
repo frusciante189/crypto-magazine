@@ -7,7 +7,7 @@ const FeaturedVideos = () => {
     <div className="max-w-screen-2xl mx-auto lg:px-8 sm:px-6 px-4 ">
       <div className="py-4">
         <div className="md:border-t-2 border-black dark:border-white">
-          <Link href="/categories/development">
+          <Link href="/development">
             <div className="flex space-x-4 items-center cursor-pointer">
               <div className="dark:bg-white bg-black dark:text-lightTitle text-darkTitle md:max-w-max max-w-full px-3 py-2 sm:py-1.5 flex-1">
                 <p className="font-spaceMono uppercase text-sm font-bold tracking-wider ">

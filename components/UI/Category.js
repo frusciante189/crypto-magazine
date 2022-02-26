@@ -5,7 +5,7 @@ import React from "react";
 const Category = ({ post }) => {
   return (
     <div>
-      <Link href={`/categories/${post[0].node.categories[0].slug}`}>
+      <Link href={`/tags/${post[0].node.categories[0].slug}`}>
         <div className="dark:bg-white bg-black dark:text-lightTitle text-darkTitle max-w-max px-3 py-2 sm:py-1.5">
           <p className="font-spaceMono uppercase text-sm font-bold tracking-wider cursor-pointer">
             {post[0].node.categories[0].name}
